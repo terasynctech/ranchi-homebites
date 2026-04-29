@@ -1,6 +1,6 @@
 body{
   margin:0;
-  font-family:Segoe UI,sans-serif;
+  font-family:'Segoe UI',sans-serif;
   background:#111;
   color:#fff;
 }
@@ -22,8 +22,9 @@ header img{
 
 nav a{
   color:#fff;
-  margin:0 8px;
+  margin:0 10px;
   text-decoration:none;
+  font-weight:500;
 }
 
 /* HERO */
@@ -38,17 +39,19 @@ nav a{
 }
 
 .hero h1{
-  font-size:32px;
+  font-size:34px;
+  margin-bottom:10px;
 }
 
 .hero p{
   color:#ffcc00;
+  font-size:20px;
 }
 
 /* TITLE */
 .title{
   text-align:center;
-  margin:25px 0;
+  margin:30px 0;
 }
 
 /* GRID */
@@ -56,16 +59,22 @@ nav a{
   display:flex;
   flex-wrap:wrap;
   justify-content:center;
-  gap:20px;
+  gap:25px;
   padding:20px;
 }
 
-/* CARD */
+/* FOOD CARD */
 .food-card{
   background:#222;
-  border-radius:14px;
+  border-radius:15px;
   overflow:hidden;
   width:300px;
+  box-shadow:0 4px 20px rgba(0,0,0,0.4);
+  transition:.3s;
+}
+
+.food-card:hover{
+  transform:translateY(-5px);
 }
 
 .food-card img{
@@ -81,15 +90,85 @@ nav a{
 
 .food-info p{
   color:#ffcc00;
+  font-size:18px;
 }
 
 button{
   background:#ffcc00;
+  color:#000;
   border:none;
   padding:10px 18px;
   border-radius:6px;
-  cursor:pointer;
   font-weight:bold;
+  cursor:pointer;
+  margin-top:10px;
+}
+
+/* CART ICON */
+.cart-icon{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#ffcc00;
+  color:#000;
+  padding:12px 18px;
+  border-radius:50px;
+  font-weight:bold;
+  cursor:pointer;
+  z-index:999;
+  box-shadow:0 4px 15px rgba(0,0,0,0.4);
+}
+
+/* WHATSAPP */
+.whatsapp-float{
+  position:fixed;
+  bottom:85px;
+  right:20px;
+  width:50px;
+  height:50px;
+  background:#25D366;
+  color:#fff;
+  border-radius:50%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size:24px;
+  text-decoration:none;
+  z-index:999;
+}
+
+/* CART MODAL */
+.cart-modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.8);
+  z-index:1000;
+}
+
+.cart-box{
+  background:#222;
+  width:90%;
+  max-width:420px;
+  margin:70px auto;
+  padding:20px;
+  border-radius:12px;
+  text-align:center;
+}
+
+.cart-row{
+  display:flex;
+  justify-content:space-between;
+  margin:12px 0;
+  border-bottom:1px solid #444;
+  padding-bottom:8px;
+}
+
+.cart-row button{
+  background:red;
+  color:#fff;
+  padding:5px 10px;
+  font-size:12px;
 }
 
 /* BLOG */
@@ -101,7 +180,7 @@ button{
   background:#222;
   padding:20px;
   margin:15px auto;
-  border-radius:10px;
+  border-radius:12px;
   max-width:700px;
 }
 
@@ -120,7 +199,15 @@ button{
     font-size:24px;
   }
 
+  .hero p{
+    font-size:16px;
+  }
+
   header img{
     height:50px;
+  }
+
+  .food-card{
+    width:92%;
   }
 }
