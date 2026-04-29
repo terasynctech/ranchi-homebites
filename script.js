@@ -14,12 +14,17 @@ function openCart(){
     let total = 0;
     cartItems.innerHTML = "";
 
+    if(cart.length === 0){
+        cartItems.innerHTML = "<p>Your cart is empty</p>";
+    }
+
     cart.forEach((product,index)=>{
         total += product.price;
+
         cartItems.innerHTML += `
         <div class="cart-row">
-            ${product.item} - ₹${product.price}
-            <button onclick="removeItem(${index})">❌</button>
+            <span>${product.item} - ₹${product.price}</span>
+            <button onclick="removeItem(${index})">X</button>
         </div>`;
     });
 
@@ -38,6 +43,11 @@ function closeCart(){
 }
 
 function sendWhatsAppOrder(){
+    if(cart.length === 0){
+        alert("Cart is empty");
+        return;
+    }
+
     let message = "🍱 *RanchiHomeBites Order*%0A%0A";
     let total = 0;
 
@@ -48,5 +58,6 @@ function sendWhatsAppOrder(){
 
     message += "%0A💰 Total: ₹" + total;
 
-    window.open("https://wa.me/917633801161?text=" + message);
+    let url = "https://wa.me/917633801161?text=" + message;
+    window.open(url,'_blank');
 }
