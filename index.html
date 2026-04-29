@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RanchiHomeBites | Homemade Food in Ranchi</title>
+
+<style>
+body {
+  margin:0;
+  font-family: Arial;
+  background:#111;
+  color:#fff;
+}
+
+/* HERO */
+.hero img {
+  width:100%;
+  height:220px;
+  object-fit:cover;
+}
+
+/* TITLE */
+h2 {
+  text-align:center;
+  margin-top:20px;
+}
+
+/* FOOD CARD */
+.food-card {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  margin: 15px auto;
+  width:90%;
+  max-width:350px;
+}
+
+.food-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+/* DARK OVERLAY */
+.food-card::after {
+  content:"";
+  position:absolute;
+  bottom:0;
+  width:100%;
+  height:60%;
+  background:linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+}
+
+/* TEXT */
+.food-info {
+  position:absolute;
+  bottom:10px;
+  left:10px;
+  z-index:2;
+}
+
+.food-info h3 {
+  margin:0;
+  font-size:18px;
+}
+
+.food-info p {
+  margin:0;
+  color:#ffcc00;
+}
+
+/* BUTTON */
+.food-card button {
+  position:absolute;
+  bottom:10px;
+  right:10px;
+  z-index:2;
+  background:#ffcc00;
+  border:none;
+  padding:8px 12px;
+  font-weight:bold;
+  border-radius:5px;
+  cursor:pointer;
+}
+
+/* ORDER BAR */
+.order-bar {
+  position:fixed;
+  bottom:0;
+  width:100%;
+  background:#000;
+  padding:10px;
+}
+
+.order-bar button {
+  width:100%;
+  background:#25D366;
+  color:#fff;
+  padding:12px;
+  border:none;
+  font-size:16px;
+  font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <img src="assets/hero-biryani.png">
+</section>
+
+<h2>🔥 Today’s Special</h2>
+
+<!-- FOOD ITEMS -->
+
+<div class="food-card">
+  <img src="assets/food/mutton-biryani.png">
+  <div class="food-info">
+    <h3>Mutton Biryani</h3>
+    <p>₹220</p>
+  </div>
+  <button onclick="orderNow('Mutton Biryani')">Order</button>
+</div>
+
+<div class="food-card">
+  <img src="assets/food/mutton-gazala.png">
+  <div class="food-info">
+    <h3>Mutton Gazala</h3>
+    <p>₹280</p>
+  </div>
+  <button onclick="orderNow('Mutton Gazala')">Order</button>
+</div>
+
+<div class="food-card">
+  <img src="assets/food/non-veg-meal.png">
+  <div class="food-info">
+    <h3>Non Veg Meal</h3>
+    <p>₹180</p>
+  </div>
+  <button onclick="orderNow('Non Veg Meal')">Order</button>
+</div>
+
+<div class="food-card">
+  <img src="assets/food/fried-rice-chicken-chilli.png">
+  <div class="food-info">
+    <h3>Chicken Chilli & Fried Rice</h3>
+    <p>₹190</p>
+  </div>
+  <button onclick="orderNow('Chicken Chilli & Fried Rice')">Order</button>
+</div>
+
+<div class="food-card">
+  <img src="assets/food/apricot-pudding.png">
+  <div class="food-info">
+    <h3>Apricot Pudding</h3>
+    <p>₹150</p>
+  </div>
+  <button onclick="orderNow('Apricot Pudding')">Order</button>
+</div>
+
+<div class="food-card">
+  <img src="assets/food/gajar-ka-halwa.png">
+  <div class="food-info">
+    <h3>Gajar Ka Halwa</h3>
+    <p>₹120</p>
+  </div>
+  <button onclick="orderNow('Gajar Ka Halwa')">Order</button>
+</div>
+
+<!-- WHY -->
+<h2>Why Choose Us?</h2>
+<p style="text-align:center;">
+✔ Fresh Homemade Food<br>
+✔ Hygienic Cooking<br>
+✔ Delivered Fast ❤️
+</p>
+
+<!-- ORDER BAR -->
+<div class="order-bar">
+  <button onclick="quickOrder()">Order on WhatsApp</button>
+</div>
+
+<script>
+
+function orderNow(item){
+  let msg = "🍱 RanchiHomeBites Order %0A%0AItem: " + item;
+  window.open("https://wa.me/917633801161?text=" + msg);
+}
+
+function quickOrder(){
+  let msg = "🍱 I want to order food from RanchiHomeBites";
+  window.open("https://wa.me/917633801161?text=" + msg);
+}
+
+</script>
+
+</body>
+</html>
