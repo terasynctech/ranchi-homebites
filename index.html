@@ -31,7 +31,7 @@
 <div class="food-info">
 <h3>Mutton Biryani</h3>
 <p>₹220</p>
-<button onclick="orderNow('Mutton Biryani')">Order</button>
+<button onclick="addToCart('Mutton Biryani',220)">Add to Cart</button>
 </div>
 </div>
 
@@ -40,12 +40,34 @@
 <div class="food-info">
 <h3>Non Veg Meal</h3>
 <p>₹180</p>
-<button onclick="orderNow('Non Veg Meal')">Order</button>
+<button onclick="addToCart('Non Veg Meal',180)">Add to Cart</button>
 </div>
 </div>
 
 </div>
+
+<!-- CART ICON -->
+<div class="cart-icon" onclick="openCart()">
+🛒 <span id="cartCount">0</span>
+</div>
+
+<!-- CART MODAL -->
+<div id="cartModal" class="cart-modal">
+  <div class="cart-box">
+    <h3>Your Cart</h3>
+    <div id="cartItems"></div>
+    <p>Total: ₹<span id="cartTotal">0</span></p>
+    <button onclick="sendWhatsAppOrder()">Order on WhatsApp</button>
+    <button onclick="closeCart()">Close</button>
+  </div>
+</div>
+
+<!-- FLOATING WHATSAPP -->
+<a href="https://wa.me/917633801161" class="whatsapp-float" target="_blank">
+💬
+</a>
 
 <script src="script.js"></script>
+
 </body>
 </html>
