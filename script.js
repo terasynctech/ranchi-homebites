@@ -54,10 +54,14 @@ function sendPartyOrder(){
 }
 
 let slides = document.querySelectorAll(".hero-slide");
-let current = 0;
+let currentSlide = 0;
 
-setInterval(()=>{
-  slides[current].classList.remove("active");
-  current = (current + 1) % slides.length;
-  slides[current].classList.add("active");
-},3000);
+function startSlider(){
+  setInterval(()=>{
+    slides[currentSlide].classList.remove("active");
+    currentSlide = (currentSlide + 1) % slides.length;
+    slides[currentSlide].classList.add("active");
+  },3000);
+}
+
+window.onload = startSlider;
