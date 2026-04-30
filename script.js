@@ -26,11 +26,11 @@ function updateCart(){
 }
 
 function openCart(){
-  document.getElementById("cartModal").style.display="block";
+  document.getElementById("cartModal").style.display = "block";
 }
 
 function closeCart(){
-  document.getElementById("cartModal").style.display="none";
+  document.getElementById("cartModal").style.display = "none";
 }
 
 function sendWhatsAppOrder(){
@@ -38,33 +38,48 @@ function sendWhatsAppOrder(){
   let time = document.getElementById("deliveryTime").value;
   let address = document.getElementById("deliveryAddress").value;
 
-  let message = "🍽 RanchiHomeBites Order%0A%0A";
   let total = 0;
+  let message = "🍽 RanchiHomeBites Order\n\n";
 
   cart.forEach(item=>{
-    message += item.name + " - ₹" + item.price + "%0A";
+    message += item.name + " - ₹" + item.price + "\n";
     total += item.price;
   });
 
-  message += "%0ATotal: ₹" + total;
-  message += "%0A%0ADelivery Date: " + date;
-  message += "%0ATime: " + time;
-  message += "%0AAddress: " + address;
+  message += "\nTotal: ₹" + total;
+  message += "\n\n📅 Delivery Date: " + date;
+  message += "\n⏰ Delivery Time: " + time;
+  message += "\n📍 Address: " + address;
 
-  window.open("https://wa.me/917633801161?text=" + message);
+  let whatsappURL =
+    "https://wa.me/917633801161?text=" + encodeURIComponent(message);
+
+  window.open(whatsappURL);
 }
 
 function sendPartyOrder(){
   let plates = document.getElementById("plates").value;
-  let msg = "🎉 Party Order Request%0APlates: " + plates;
-  window.open("https://wa.me/917633801161?text=" + msg);
+
+  let message =
+    "🎉 Party Order Request\n" +
+    "Plates: " + plates + "\n" +
+    "Please share menu and quotation.";
+
+  let whatsappURL =
+    "https://wa.me/917633801161?text=" + encodeURIComponent(message);
+
+  window.open(whatsappURL);
 }
 
 let slides = document.querySelectorAll(".hero-slide");
 let currentSlide = 0;
 
-setInterval(()=>{
-  slides[currentSlide].classList.remove("active");
-  currentSlide = (currentSlide + 1) % slides.length;
-  slides[currentSlide].classList.add("active");
-},3000);
+function startSlider(){
+  setInterval(()=>{
+    slides[currentSlide].classList.remove("active");
+    currentSlide = (currentSlide + 1) % slides.length;
+    slides[currentSlide].classList.add("active");
+  }, 3000);
+}
+
+window.onload = startSlider;
