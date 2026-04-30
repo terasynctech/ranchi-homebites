@@ -29,20 +29,39 @@ nav a{
 
 /* HERO SLIDER */
 .hero{
-  height:400px;
-  background:url('hero1.jpg') center/cover no-repeat;
+  height:350px;
+  position:relative;
+  overflow:hidden;
   display:flex;
   justify-content:center;
   align-items:center;
   text-align:center;
-  position:relative;
-  animation:heroSlider 15s infinite;
+}
+
+.hero-slide{
+  position:absolute;
+  inset:0;
+  background-size:cover;
+  background-position:center;
+  opacity:0;
+  transition:opacity 1s ease-in-out;
+}
+
+.hero-slide.active{
+  opacity:1;
 }
 
 .hero-overlay{
-  background:rgba(0,0,0,0.5);
-  padding:30px;
-  border-radius:12px;
+  position:relative;
+  z-index:2;
+}
+
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.55);
+  z-index:1;
 }
 
 .hero h1{
@@ -54,7 +73,6 @@ nav a{
   color:#ffcc00;
   font-size:20px;
 }
-
 @keyframes heroSlider{
   0%{
     background:url('hero1.jpg') center/cover no-repeat;
