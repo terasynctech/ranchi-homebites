@@ -125,6 +125,73 @@ function sendPartyOrder(){
   window.open(url);
 }
 
+function downloadInvoice(){
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF();
+
+  let date = document.getElementById("deliveryDate").value;
+  let time = document.getElementById("deliveryTime").value;
+  let address = document.getElementById("deliveryAddress").value;
+
+  let invoiceNo = "RB" + Math.floor(Math.random() * 100000);
+  let y = 20;
+  let total = 0;
+
+  doc.setFontSize(18);
+  doc.text("RanchiHomeBites", 20, y);
+
+  y += 8;
+  doc.setFontSize(10);
+  doc.text("Homemade Food Delivered Fresh in Ranchi", 20, y);
+
+  y += 12;
+  doc.text("Invoice No: " + invoiceNo, 20, y);
+  doc.text("Date: " + new Date().toLocaleDateString(), 140, y);
+
+  y += 12;
+  doc.setFontSize(12);
+  doc.text("Customer Delivery Details", 20, y);
+
+  y += 8;
+  doc.setFontSize(10);
+  doc.text("Delivery Date: " + date, 20, y);
+  y += 6;
+  doc.text("Delivery Time: " + time, 20, y);
+  y += 6;
+  doc.text("Address: " + address, 20, y);
+
+  y += 14;
+  doc.setFontSize(12);
+  doc.text("Order Summary", 20, y);
+
+  y += 8;
+  doc.setFontSize(10);
+
+  cart.forEach(item=>{
+    let itemTotal = item.price * item.qty;
+    total += itemTotal;
+
+    doc.text(
+      `${item.name}  x${item.qty}   ₹${item.price}   = ₹${itemTotal}`,
+      20,
+      y
+    );
+    y += 8;
+  });
+
+  y += 5;
+  doc.setFontSize(12);
+  doc.text("Total Amount: ₹" + total, 20, y);
+
+  y += 15;
+  doc.setFontSize(10);
+  doc.text("Thank you for ordering from RanchiHomeBites", 20, y);
+  y += 6;
+  doc.text("WhatsApp: +91 76338 01161", 20, y);
+
+  doc.save("RanchiHomeBites-Invoice.pdf");
+}
+
 let slides = document.querySelectorAll(".hero-slide");
 let currentSlide = 0;
 
