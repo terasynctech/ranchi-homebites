@@ -1,28 +1,60 @@
 let cart = [];
 
 function addToCart(name, price){
-  cart.push({name, price});
+  let existingItem = cart.find(item => item.name === name);
+
+  if(existingItem){
+    existingItem.qty += 1;
+  }else{
+    cart.push({
+      name: name,
+      price: price,
+      qty: 1
+    });
+  }
+
+  updateCart();
+}
+
+function changeQty(index, change){
+  cart[index].qty += change;
+
+  if(cart[index].qty <= 0){
+    cart.splice(index, 1);
+  }
+
   updateCart();
 }
 
 function updateCart(){
-  document.getElementById("cartCount").innerText = cart.length;
-
+  let totalItems = 0;
+  let totalAmount = 0;
   let html = "";
-  let total = 0;
 
-  cart.forEach(item=>{
-    total += item.price;
+  cart.forEach((item, index)=>{
+    let itemTotal = item.price * item.qty;
+    totalItems += item.qty;
+    totalAmount += itemTotal;
+
     html += `
       <div class="cart-row">
-        <span>${item.name}</span>
-        <span>₹${item.price}</span>
+        <div>
+          <strong>${item.name}</strong><br>
+          ₹${item.price} × ${item.qty} = ₹${itemTotal}
+        </div>
+
+        <div class="qty-controls">
+          <button onclick="changeQty(${index}, -1)">−</button>
+          <span>${item.qty}</span>
+          <button onclick="changeQty(${index}, 1)">+</button>
+        </div>
       </div>
     `;
   });
 
+  document.getElementById("cartCount").innerText = totalItems;
   document.getElementById("cartItems").innerHTML = html;
-  document.getElementById("cartTotal").innerText = total;
+  document.getElementById("cartTotal").innerText = totalAmount;
 }
 
 function openCart(){
@@ -62,8 +94,10 @@ function sendWhatsAppOrder(){
   let message = "🍽 RanchiHomeBites Order\n\n";
 
   cart.forEach(item=>{
-    message += item.name + " - ₹" + item.price + "\n";
-    total += item.price;
+    let itemTotal = item.price * item.qty;
+    total += itemTotal;
+
+    message += `${item.name} x ${item.qty} = ₹${itemTotal}\n`;
   });
 
   message += "\nTotal: ₹" + total;
@@ -99,7 +133,7 @@ function startSlider(){
     slides[currentSlide].classList.remove("active");
     currentSlide = (currentSlide + 1) % slides.length;
     slides[currentSlide].classList.add("active");
-  },3000);
+  }, 3000);
 }
 
 window.onload = startSlider;
