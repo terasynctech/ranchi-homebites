@@ -15,6 +15,18 @@ header{
   flex-wrap:wrap;
 }
 
+.brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.brand span{
+  font-size:22px;
+  font-weight:bold;
+  color:#ffcc00;
+}
+
 header img{
   height:60px;
   object-fit:contain;
@@ -72,6 +84,7 @@ nav a{
   color:#ffcc00;
   font-size:22px;
 }
+
 /* TITLE */
 .title{
   text-align:center;
@@ -126,6 +139,22 @@ button{
   font-weight:bold;
   cursor:pointer;
   margin-top:10px;
+}
+
+/* PARTY SECTION */
+.party-section{
+  text-align:center;
+  padding:40px 20px;
+  background:#1a1a1a;
+  margin:30px 0;
+}
+
+.party-section select{
+  padding:10px;
+  border-radius:6px;
+  border:none;
+  margin-top:15px;
+  font-size:16px;
 }
 
 /* CART ICON */
@@ -195,6 +224,22 @@ button{
   font-size:12px;
 }
 
+/* CUSTOMER FORM FIELDS */
+.cart-box input,
+.cart-box textarea{
+  width:90%;
+  padding:10px;
+  margin:10px 0;
+  border:none;
+  border-radius:8px;
+  font-size:14px;
+}
+
+.cart-box textarea{
+  min-height:70px;
+  resize:none;
+}
+
 /* BLOG */
 .blog{
   padding:20px;
@@ -206,6 +251,15 @@ button{
   margin:15px auto;
   border-radius:12px;
   max-width:700px;
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:25px;
+  background:#000;
+  color:#ccc;
+  margin-top:40px;
 }
 
 /* MOBILE */
@@ -241,5 +295,9 @@ button{
 
   .hero-overlay{
     padding:18px;
+  }
+
+  .brand span{
+    font-size:18px;
   }
 }
