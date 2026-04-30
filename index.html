@@ -12,6 +12,9 @@
   <meta property="og:url" content="https://terasynctech.github.io/ranchi-homebites/">
   <meta property="og:type" content="website">
 
+  <!-- PDF Invoice Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -161,6 +164,7 @@
 
     <p>Total: ₹<span id="cartTotal">0</span></p>
 
+    <button onclick="downloadInvoice()">Download Invoice</button>
     <button onclick="sendWhatsAppOrder()">Order on WhatsApp</button>
     <button onclick="closeCart()">Close</button>
   </div>
