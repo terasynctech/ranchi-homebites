@@ -152,9 +152,15 @@
 
     <input type="date" id="deliveryDate">
     <input type="time" id="deliveryTime">
+
     <textarea id="deliveryAddress" placeholder="Enter delivery address"></textarea>
 
+    <button type="button" onclick="getLocation()">Use My Current Location</button>
+
+    <input type="hidden" id="mapLocation">
+
     <p>Total: ₹<span id="cartTotal">0</span></p>
+
     <button onclick="sendWhatsAppOrder()">Order on WhatsApp</button>
     <button onclick="closeCart()">Close</button>
   </div>
@@ -177,3 +183,7 @@
 
   <p>© RanchiHomeBites | Powered by TeraSyncTech</p>
 </footer>
+
+<script src="script.js"></script>
+</body>
+</html>
