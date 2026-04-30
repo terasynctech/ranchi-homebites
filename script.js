@@ -11,7 +11,7 @@ function updateCart(){
   let html = "";
   let total = 0;
 
-  cart.forEach((item, index)=>{
+  cart.forEach(item=>{
     total += item.price;
     html += `
       <div class="cart-row">
@@ -34,6 +34,10 @@ function closeCart(){
 }
 
 function sendWhatsAppOrder(){
+  let date = document.getElementById("deliveryDate").value;
+  let time = document.getElementById("deliveryTime").value;
+  let address = document.getElementById("deliveryAddress").value;
+
   let message = "🍽 RanchiHomeBites Order%0A%0A";
   let total = 0;
 
@@ -43,6 +47,9 @@ function sendWhatsAppOrder(){
   });
 
   message += "%0ATotal: ₹" + total;
+  message += "%0A%0ADelivery Date: " + date;
+  message += "%0ATime: " + time;
+  message += "%0AAddress: " + address;
 
   window.open("https://wa.me/917633801161?text=" + message);
 }
@@ -56,12 +63,8 @@ function sendPartyOrder(){
 let slides = document.querySelectorAll(".hero-slide");
 let currentSlide = 0;
 
-function startSlider(){
-  setInterval(()=>{
-    slides[currentSlide].classList.remove("active");
-    currentSlide = (currentSlide + 1) % slides.length;
-    slides[currentSlide].classList.add("active");
-  },3000);
-}
-
-window.onload = startSlider;
+setInterval(()=>{
+  slides[currentSlide].classList.remove("active");
+  currentSlide = (currentSlide + 1) % slides.length;
+  slides[currentSlide].classList.add("active");
+},3000);
