@@ -60,4 +60,15 @@ function sendWhatsAppOrder(){
 
     let url = "https://wa.me/917633801161?text=" + message;
     window.open(url,'_blank');
+
 }
+let slides = document.querySelectorAll(".hero-slide");
+let currentSlide = 0;
+
+function autoSlide(){
+  slides[currentSlide].classList.remove("active");
+  currentSlide = (currentSlide + 1) % slides.length;
+  slides[currentSlide].classList.add("active");
+}
+
+setInterval(autoSlide, 3000);
