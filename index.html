@@ -9,7 +9,7 @@
 <body>
 
 <header>
-  <img src="assets/logo.png" alt="RanchiHomeBites">
+  <img src="logo.png" alt="RanchiHomeBites">
   <nav>
     <a href="index.html">Home</a>
     <a href="menu.html">Menu</a>
@@ -18,8 +18,10 @@
 </header>
 
 <section class="hero">
-  <h1>Homemade Food in Ranchi</h1>
-  <p>Fresh • Hygienic • Delicious</p>
+  <div class="hero-overlay">
+    <h1>Homemade Food in Ranchi</h1>
+    <p>Fresh • Hygienic • Delicious</p>
+  </div>
 </section>
 
 <h2 class="title">🔥 Today’s Special</h2>
@@ -27,7 +29,7 @@
 <div class="grid">
 
 <div class="food-card">
-<img src="assets/food/mutton-biryani.png">
+<img src="images/mutton-biryani.png">
 <div class="food-info">
 <h3>Mutton Biryani</h3>
 <p>₹220</p>
@@ -36,7 +38,7 @@
 </div>
 
 <div class="food-card">
-<img src="assets/food/non-veg-meal.png">
+<img src="images/non-veg-meal.png">
 <div class="food-info">
 <h3>Non Veg Meal</h3>
 <p>₹180</p>
@@ -46,12 +48,10 @@
 
 </div>
 
-<!-- CART ICON -->
 <div class="cart-icon" onclick="openCart()">
 🛒 <span id="cartCount">0</span>
 </div>
 
-<!-- CART MODAL -->
 <div id="cartModal" class="cart-modal">
   <div class="cart-box">
     <h3>Your Cart</h3>
@@ -62,7 +62,6 @@
   </div>
 </div>
 
-<!-- FLOATING WHATSAPP -->
 <a href="https://wa.me/917633801161" class="whatsapp-float" target="_blank">
 💬
 </a>
