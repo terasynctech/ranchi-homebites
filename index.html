@@ -1,10 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>RanchiHomeBites</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RanchiHomeBites</title>
+
+  <!-- Social Preview -->
+  <meta property="og:title" content="RanchiHomeBites">
+  <meta property="og:description" content="Homemade Food Delivered Fresh in Ranchi">
+  <meta property="og:image" content="https://terasynctech.github.io/ranchi-homebites/assets/logo.png">
+  <meta property="og:url" content="https://terasynctech.github.io/ranchi-homebites/">
+  <meta property="og:type" content="website">
+
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -22,6 +30,7 @@
   </nav>
 </header>
 
+<!-- HERO SLIDER -->
 <section class="hero">
   <div class="hero-slide active" style="background-image:url('assets/hero1.jpg')"></div>
   <div class="hero-slide" style="background-image:url('assets/hero2.jpg')"></div>
@@ -33,131 +42,138 @@
   </div>
 </section>
 
+<!-- MENU -->
 <h2 class="title" id="menu">🍽 Our Signature Menu</h2>
 
 <div class="grid">
 
-<div class="food-card">
-<img src="assets/food/mutton-biryani.png">
-<div class="food-info">
-<h3>Mutton Biryani</h3>
-<p>₹220</p>
-<button onclick="addToCart('Mutton Biryani',220)">Add</button>
-</div>
+  <div class="food-card">
+    <img src="assets/food/mutton-biryani.png" alt="Mutton Biryani">
+    <div class="food-info">
+      <h3>Mutton Biryani</h3>
+      <p>₹220</p>
+      <button onclick="addToCart('Mutton Biryani',220)">Add</button>
+    </div>
+  </div>
+
+  <div class="food-card">
+    <img src="assets/food/kheema-pulao.png" alt="Kheema Pulao">
+    <div class="food-info">
+      <h3>Kheema Pulao</h3>
+      <p>₹240</p>
+      <button onclick="addToCart('Kheema Pulao',240)">Add</button>
+    </div>
+  </div>
+
+  <div class="food-card">
+    <img src="assets/food/chicken-kabab.png" alt="Chicken Kabab">
+    <div class="food-info">
+      <h3>Chicken Kabab</h3>
+      <p>₹180</p>
+      <button onclick="addToCart('Chicken Kabab',180)">Add</button>
+    </div>
+  </div>
+
+  <div class="food-card">
+    <img src="assets/food/non-veg-thali.png" alt="Non Veg Thali">
+    <div class="food-info">
+      <h3>Non Veg Thali</h3>
+      <p>₹250</p>
+      <button onclick="addToCart('Non Veg Thali',250)">Add</button>
+    </div>
+  </div>
+
+  <div class="food-card">
+    <img src="assets/food/veg-thali.png" alt="Veg Thali">
+    <div class="food-info">
+      <h3>Veg Thali</h3>
+      <p>₹140</p>
+      <button onclick="addToCart('Veg Thali',140)">Add</button>
+    </div>
+  </div>
+
+  <div class="food-card">
+    <img src="assets/food/mutton-ghazal.png" alt="Mutton Ghazal">
+    <div class="food-info">
+      <h3>Mutton Ghazal</h3>
+      <p>₹320</p>
+      <button onclick="addToCart('Mutton Ghazal',320)">Add</button>
+    </div>
+  </div>
+
+  <div class="food-card">
+    <img src="assets/food/fried-rice-chicken-chilli.png" alt="Fried Rice">
+    <div class="food-info">
+      <h3>Fried Rice & Chicken Chilli</h3>
+      <p>₹190</p>
+      <button onclick="addToCart('Fried Rice & Chicken Chilli',190)">Add</button>
+    </div>
+  </div>
+
+  <div class="food-card">
+    <img src="assets/food/apricot-pudding.png" alt="Apricot Pudding">
+    <div class="food-info">
+      <h3>Apricot Pudding</h3>
+      <p>₹120</p>
+      <button onclick="addToCart('Apricot Pudding',120)">Add</button>
+    </div>
+  </div>
+
+  <div class="food-card">
+    <img src="assets/food/gajar-halwa.png" alt="Gajar Halwa">
+    <div class="food-info">
+      <h3>Gajar Halwa</h3>
+      <p>₹100</p>
+      <button onclick="addToCart('Gajar Halwa',100)">Add</button>
+    </div>
+  </div>
+
 </div>
 
-<div class="food-card">
-<img src="assets/food/kheema-pulao.png">
-<div class="food-info">
-<h3>Kheema Pulao</h3>
-<p>₹240</p>
-<button onclick="addToCart('Kheema Pulao',240)">Add</button>
-</div>
-</div>
-
-<div class="food-card">
-<img src="assets/food/chicken-kabab.png">
-<div class="food-info">
-<h3>Chicken Kabab</h3>
-<p>₹180</p>
-<button onclick="addToCart('Chicken Kabab',180)">Add</button>
-</div>
-</div>
-
-<div class="food-card">
-<img src="assets/food/non-veg-thali.png">
-<div class="food-info">
-<h3>Non Veg Thali</h3>
-<p>₹250</p>
-<button onclick="addToCart('Non Veg Thali',250)">Add</button>
-</div>
-</div>
-
-<div class="food-card">
-<img src="assets/food/veg-thali.png">
-<div class="food-info">
-<h3>Veg Thali</h3>
-<p>₹140</p>
-<button onclick="addToCart('Veg Thali',140)">Add</button>
-</div>
-</div>
-
-<div class="food-card">
-<img src="assets/food/mutton-ghazal.png">
-<div class="food-info">
-<h3>Mutton Ghazal</h3>
-<p>₹320</p>
-<button onclick="addToCart('Mutton Ghazal',320)">Add</button>
-</div>
-</div>
-
-<div class="food-card">
-<img src="assets/food/fried-rice-chicken-chilli.png">
-<div class="food-info">
-<h3>Fried Rice & Chicken Chilli</h3>
-<p>₹190</p>
-<button onclick="addToCart('Fried Rice & Chicken Chilli',190)">Add</button>
-</div>
-</div>
-
-<div class="food-card">
-<img src="assets/food/apricot-pudding.png">
-<div class="food-info">
-<h3>Apricot Pudding</h3>
-<p>₹120</p>
-<button onclick="addToCart('Apricot Pudding',120)">Add</button>
-</div>
-</div>
-
-<div class="food-card">
-<img src="assets/food/gajar-halwa.png">
-<div class="food-info">
-<h3>Gajar Halwa</h3>
-<p>₹100</p>
-<button onclick="addToCart('Gajar Halwa',100)">Add</button>
-</div>
-</div>
-
-</div>
-
+<!-- PARTY ORDERS -->
 <section class="party-section" id="party">
-<h2>🎉 Party Orders (10–50 People)</h2>
-<p>
-Biryani • Raita • Chicken Fry • Kabab • Sweet Dishes  
-(Gajar Halwa • Apricot Pudding • Phirni)
-</p>
+  <h2>🎉 Party Orders (10–50 People)</h2>
+  <p>
+    Biryani • Raita • Chicken Fry • Kabab • Sweet Dishes  
+    (Gajar Halwa • Apricot Pudding • Phirni)
+  </p>
 
-<select id="plates">
-<option value="10">10 Plates</option>
-<option value="20">20 Plates</option>
-<option value="30">30 Plates</option>
-<option value="40">40 Plates</option>
-<option value="50">50 Plates</option>
-</select>
+  <select id="plates">
+    <option value="10">10 Plates</option>
+    <option value="20">20 Plates</option>
+    <option value="30">30 Plates</option>
+    <option value="40">40 Plates</option>
+    <option value="50">50 Plates</option>
+  </select>
 
-<button onclick="sendPartyOrder()">Get Party Quote</button>
+  <button onclick="sendPartyOrder()">Get Party Quote</button>
 </section>
 
+<!-- CART -->
 <div class="cart-icon" onclick="openCart()">
-🛒 <span id="cartCount">0</span>
+  🛒 <span id="cartCount">0</span>
 </div>
 
 <div id="cartModal" class="cart-modal">
-<div class="cart-box">
-<h3>Your Cart</h3>
-<div id="cartItems"></div>
-<p>Total: ₹<span id="cartTotal">0</span></p>
-<button onclick="sendWhatsAppOrder()">Order on WhatsApp</button>
-<button onclick="closeCart()">Close</button>
-</div>
+  <div class="cart-box">
+    <h3>Your Cart</h3>
+    <div id="cartItems"></div>
+    <p>Total: ₹<span id="cartTotal">0</span></p>
+    <button onclick="sendWhatsAppOrder()">Order on WhatsApp</button>
+    <button onclick="closeCart()">Close</button>
+  </div>
 </div>
 
-<a href="https://wa.me/917633801161" class="whatsapp-float" target="_blank">💬</a>
+<!-- FLOATING WHATSAPP -->
+<a href="https://wa.me/917633801161" class="whatsapp-float" target="_blank">
+  💬
+</a>
 
+<!-- FOOTER -->
 <footer id="contact">
-<p>📍 Sainik Market, Main Road, Ranchi</p>
-<p>📞 WhatsApp: +91 76338 01161</p>
-<p>© RanchiHomeBites | Powered by TeraSyncTech</p>
+  <p>📍 Sainik Market, Main Road, Ranchi</p>
+  <p>📞 WhatsApp: +91 76338 01161</p>
+  <p>© RanchiHomeBites | Powered by TeraSyncTech</p>
 </footer>
 
 <script src="script.js"></script>
